@@ -4,8 +4,8 @@ require('dotenv').config();
 const schoolRoutes = require('./routes/schoolRoutes');
 
 app.use(express.json());
-// app.use('/api', schoolRoutes);
-app.use('/', schoolRoutes);
+app.use('/api', schoolRoutes);
+
 
 // Default route for '/'
 app.get('/', (req, res) => {
