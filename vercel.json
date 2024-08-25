@@ -3,17 +3,24 @@
     "builds": [
         {
             "src": "app.js",
-            "use": "@vercel/node"
+            "use": "@vercel/node",
+            "config": {
+                "includeFiles": [
+                    "routes/**/*",
+                    "controllers/**/*",
+                    ".env"
+                ]
+            }
         }
     ],
     "routes": [
         {
-            "src": "/",
-            "dest": "app.js"
+            "src": "/api/(.*)",
+            "dest": "/app.js"
         },
         {
-            "src": "/api",
-            "dest": "schoolRoutes.js"
+            "src": "/(.*)",
+            "dest": "/app.js"
         }
     ]
 }

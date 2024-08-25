@@ -5,12 +5,11 @@ const schoolRoutes = require('./routes/schoolRoutes');
 
 app.use(express.json());
 app.use('/api', schoolRoutes);
-
-
 // Default route for '/'
 app.get('/', (req, res) => {
     res.send('Welcome to the School Management API');
 });
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
